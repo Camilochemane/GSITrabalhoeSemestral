@@ -387,7 +387,7 @@
 
                     <li><a href="{{URL::to('consulta/marcarconsulta')}}"><i class="icon-columns"></i> Marcar Consulta </a></li>
 
-                     <li><a href="{{URL::to('paciente/savepaciente')}}"><i class="icon-columns"></i> Registar Paciente</a></li>
+                     <li><a href="{{URL::to('paciente/formpaciente')}}"><i class="icon-columns"></i> Registar Paciente</a></li>
                     @endif
 
 
