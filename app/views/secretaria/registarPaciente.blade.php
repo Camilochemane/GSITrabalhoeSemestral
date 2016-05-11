@@ -52,16 +52,12 @@
                                         </div>
 
                                    <div class="form-group">
-                       			 		<label class="control-label col-lg-4" >Data de Nascimento</label>
-                        				<div class="col-lg-3">
-                           			 	<div class="input-group input-append  date" id="dpDataNascimento" data-date="12-02-2012"
-                                	 	data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                               		 	<input class="form-control" type="text" value="12-02-2012" readonly="" />
-                                		<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
-                           			 </div>
-                       				 </div>
-                   				 </div>
-                   
+                                            <label class="control-label col-lg-4">Date de Nascimento </label>
+
+                                            <div class="col-lg-4">
+                                                <input type="date" id="date2" name="date2" class="form-control">
+                                            </div>
+                                        </div>
                        
                        					<div class="form-group">
                                             <label class="control-label col-lg-4">Numero B.I.</label>
@@ -69,17 +65,13 @@
                                                 <input id="txtBINr" name="NumeroBI" class="form-control" type="text">
                                             </div>
                                         </div>
-
                                         <div class="form-group">
-                       			 		<label class="control-label col-lg-4" >Data de Emissao</label>
-                        				<div class="col-lg-3">
-                           			 	<div class="input-group input-append  date" id="dpDataEmissao" data-date="12-02-2012"
-                                	 	data-date-format="dd-mm-yyyy" data-date-viewmode="years">
-                               		 	<input class="form-control" type="text" value="12-02-2012" readonly="" />
-                                		<span class="input-group-addon add-on"><i class="icon-calendar"></i></span>
-                           			 </div>
-                       				 </div>
-                   					 </div>
+                                            <label class="control-label col-lg-4">Date de Emissao</label>
+
+                                            <div class="col-lg-4">
+                                                <input type="date" id="date2" name="date2" class="form-control">
+                                            </div>
+                                        </div>
 
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Morada</label>

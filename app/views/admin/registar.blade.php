@@ -25,11 +25,56 @@
                                 <div id="collapseOne" class="accordion-body collapse in body">
                                    
                                      {{Form::open(array('url'=>'registar/save', 'class'=>'form-horizontal', 'id'=>'block-validate', 'novalidate'=>'novalidate'))}}
-                     
+
+                                      <div class="form-group">
+                                            <label class="control-label col-lg-4">Apelido</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="required2" name="apelido" class="form-control">
+                                            </div>
+                                        </div>
                                         <div class="form-group">
                                             <label class="control-label col-lg-4">Nome</label>
                                             <div class="col-lg-4">
                                                 <input type="text" id="required2" name="nome" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Genêro</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="required2" name="genero" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">Data de Nascimento</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="required2" name="datanascimento" class="form-control">
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="control-label col-lg-4">Morada</label>
+
+                                            <div class="col-lg-4">
+                                                <input type="text" id="email2" name="morada" class="form-control">
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="control-label col-lg-4">Telefone</label>
+
+                                            <div class="col-lg-4">
+                                                <input type="text" id="email2" name="telefone" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label col-lg-4">B.I. Nr</label>
+
+                                            <div class="col-lg-4">
+                                                <input type="text" id="email2" name="binr" class="form-control">
+                                            </div>
+                                        </div>
+                                         <div class="form-group">
+                                            <label class="control-label col-lg-4">Data de Emissão</label>
+                                            <div class="col-lg-4">
+                                                <input type="text" id="required2" name="dataemissao" class="form-control">
                                             </div>
                                         </div>
                                         <div class="form-group">
@@ -55,7 +100,7 @@
                                         </div>
                                     
                                         <div class="form-group">
-                                            <label class="control-label col-lg-4">Tipo</label>
+                                            <label class="control-label col-lg-4">Função</label>
 
                                             <div class="col-lg-4">
                                                 <select  class="form-control" name="tipo" id="url2">
@@ -64,13 +109,21 @@
 	                                                	</option>
 	                                                @endforeach
                                                 </select>
-
-                                                {{-- <div class="col-md-4 btn-group">
-                                                <button class="btn btn-primary"><i class="icon-pencil icon-plus"></i>Adicionar</button>   
-											    </div> --}}
                                             </div>
                                         </div>
                                         
+                                         <div class="form-group">
+                                            <label class="control-label col-lg-4">Especialidade</label>
+
+                                            <div class="col-lg-4">
+                                                <select  class="form-control" name="especialidade" id="especialidade">
+                                                    @foreach($massango as $esp)
+                                                        <option value="{{$esp->EspecialidadeID}}">{{$esp->Designacao}}
+                                                        </option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
                                         <div class="form-actions no-margin-bottom" style="text-align:center;">
                                             <input type="submit" value="Gravar" class="btn btn-primary btn-lg ">
                                            {{--  <input type="" value="Cancelar" class="btn btn-primary btn-lg "> --}}

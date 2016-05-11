@@ -1036,7 +1036,14 @@ function renderPagination(wizard, options, state)
 
         if (options.enableFinishButton)
         {
-            buttons += format(buttonTemplate, "finish", options.labels.finish);
+            buttons += '<input type="submit" class="btn btn-primary" role="menuitem" style=" padding: 0.5em 1em; margin-left: 10px;">';
+
+            buttons.enableFinishButton = false;
+            // buttons += format(buttonTemplate, "finish", options.labels.finish);
+        }
+        else
+        {
+
         }
 
         wizard.append(format(pagination, options.actionContainerTag, options.clearFixCssClass,

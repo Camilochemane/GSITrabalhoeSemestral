@@ -22,3 +22,4 @@ Route::controller('autenticacao', 'AutenticacaoController');
 Route::controller('registar','RegistarController');
 Route::controller('consulta', 'ConsultaController');
 Route::controller('paciente','PacienteController');
+Route::controller('agenda','AgendaController');

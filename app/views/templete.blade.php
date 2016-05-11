@@ -19,12 +19,16 @@
     <!-- GLOBAL STYLES -->
     
 
-    {{ HTML::style ("assets/plugins/bootstrap/css/bootstrap.css") }}
+
+   {{ HTML::style ("assets/plugins/bootstrap/css/bootstrap.css") }}
     {{ HTML::style ("assets/css/main.css") }}
     {{ HTML::style ("assets/css/theme.css") }}
     {{ HTML::style ("assets/css/MoneAdmin.css") }}
-    {{ HTML::style ("assets/css/MoneAdmin.css") }}
     {{ HTML::style ("assets/plugins/Font-Awesome/css/font-awesome.css") }}
+
+    {{HTML::style("assets/plugins/jquery-steps-master/demo/css/normalize.css")}}
+    {{HTML::style("assets/plugins/jquery-steps-master/demo/css/wizardMain.css")}}
+    {{HTML::style("assets/plugins/jquery-steps-master/demo/css/jquery.steps.css")}}
 
 </head>
     <!-- END  HEAD-->
@@ -47,7 +51,7 @@
 
                     <a href="{{URL::to('/')}}" class="navbar-brand">
 
-                    <img src="assets/img/logo.png" alt="" /></a>
+                    {{HTML::image("assets/img/logo.png")}}
                 </header>
                 <!-- END LOGO SECTION -->
                 <ul class="nav navbar-top-links navbar-right">
@@ -294,7 +298,7 @@
        <div id="left">
             <div class="media user-media well-small">
                 <a class="user-link" href="#">
-                    {{HTML::image("assets/img/user.gif",'User Picture', array('class'=>"media-object img-thumbnail user-img"))}}
+                    {{HTML::image("assets/img/consulta.png",'User Picture', array('class'=>"media-object img-thumbnail user-img"))}}
                 </a>
                 <br />
                 <div class="media-body">
@@ -335,9 +339,15 @@
                                    &nbsp; <span class="label label-default">10</span>&nbsp;
                                 </a>
                                 <ul class="collapse" id="component-nav">
-                                    <li class=""><a href="{{URL::to('registar/registar')}}"><i class="icon-angle-right"></i> Funcionario </a></li>
+                                    <li class=""><a href="#" data-toggle="modal" data-target="#myModal2"><i class="icon-angle-right"></i> Especialidade</a></li>
+
+                                                                       
+                                    <li class=""><a href="{{URL::to('registar/registar')}}"><i class="icon-angle-right"></i> Usuário </a></li>
                                      
-                                     <li class=""><a href="#" data-toggle="modal" data-target="#myModal"><i class="icon-angle-right"></i> Tipo Funcionario</a></li>
+                                     <li class=""><a href="#" data-toggle="modal" data-target="#myModal1"><i class="icon-angle-right"></i> Função do Funcionário </a></li>
+
+
+                                      <li class=""><a href="{{URL::to('agenda/formagenda')}}"><i class="icon-angle-right"></i>Agenda</a></li>
                                      
                                 </ul>
 
@@ -385,7 +395,7 @@
 
                     @if(Auth::user()->tipo_id==3)
 
-                    <li><a href="{{URL::to('consulta/marcarconsulta')}}"><i class="icon-columns"></i> Marcar Consulta </a></li>
+                    <li><a href="{{URL::to('consulta/formconsulta')}}"><i class="icon-columns"></i> Marcar Consulta </a></li>
 
                      <li><a href="{{URL::to('paciente/formpaciente')}}"><i class="icon-columns"></i> Registar Paciente</a></li>
                     @endif
@@ -444,25 +454,62 @@
      <!-- GLOBAL SCRIPTS -->
 
 {{ HTML::script ("assets/plugins/jquery-2.0.3.min.js")}}
+
+@yield('script')
+
 {{ HTML::script ("assets/plugins/bootstrap/js/bootstrap.min.js")}}
 {{ HTML::script ("assets/plugins/modernizr-2.6.2-respond-1.1.0.min.js")}}
 
+{{HTML::script("assets/plugins/jquery-steps-master/lib/jquery.cookie-1.3.1.js")}}
+{{HTML::script("assets/plugins/jquery-steps-master/build/jquery.steps.js")}}
+{{HTML::script("assets/js/WizardInit.js")}}
+
                     {{Form::open(array('url'=>'registar/savetipo'))}}
 
-                            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                            <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                                            <h4 class="modal-title" id="myModalLabel">Registar Tipo Funcionario</h4>
+                                            <h4 class="modal-title" id="myModalLabel">Registar Função do Funcionário</h4>
                                         </div>
                                         <div class="modal-body">
 
                                             <div class="form-group">
-                                            <label class="control-label col-lg-4">tipo</label>
+                                            <label class="control-label col-lg-4">Função</label>
 
                                             <div class="col-lg-4">
                                                 <input type="text" id="email2" name="tipo" class="form-control">
+                                            </div>
+                                        </div>
+
+                                         </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+                                            <button type="submit" class="btn btn-primary">Gravar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        {{Form::close()}}
+
+
+                        {{Form::open(array('url'=>'registar/saveespecialidade'))}}
+
+                            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                                            <h4 class="modal-title" id="myModalLabel">Registar Especialidade</h4>
+                                        </div>
+                                        <div class="modal-body">
+
+                                            <div class="form-group">
+                                            <label class="control-label col-lg-4">Especialidade</label>
+
+                                            <div class="col-lg-4">
+                                                <input type="text" id="email2" name="especialidade" class="form-control" placeholder="Digite Especialidades do Médico">
                                             </div>
                                         </div>
 
